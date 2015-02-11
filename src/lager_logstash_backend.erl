@@ -36,7 +36,7 @@ init(Params) ->
     case string:to_float(Lager_Version) of
       {V1, _} when V1 < 2.0 ->
         'number';
-      {V2, _} when V2 =:= 2.0 ->
+      {V2, _} when V2 =:= 2.0 orelse V2 =:= 2.1.0 ->
         'mask';
       {_, _} ->
         'unknown'
