@@ -129,8 +129,8 @@ code_change(_OldVsn, State, _Extra) ->
 
 encode_json_event('mask', Node, Node_Role, Node_Version, Severity, Date, Time, Message, Metadata) ->
   DateTime = io_lib:format("~sT~s", [Date,Time]),
-  jiffy:encode({[
-                {<<"fields">>, 
+  jsx:encode({[
+                {<<"fields">>,
                     {[
                         {<<"level">>, Severity},
                         {<<"role">>, list_to_binary(Node_Role)},
